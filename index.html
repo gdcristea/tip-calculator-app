@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet"> 
+
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <header>
+    <img class="logo" src="images/logo.svg" alt="logo">
+  </header>
+  <main>
+    <div class="input">
+      <label for="bill-amount">Bill</label><br>
+      <input type="text" id="bill-amount" name="bill-amount" placeholder="0" min="1">
+      <p class="label">Select Tip %</p>
+      <div class="grid-container">
+        <button class="btn-tip">5%</button>
+        <button class="btn-tip">10%</button>
+        <button class="btn-tip btn-selected">15%</button>
+        <button class="btn-tip">25%</button>
+        <button class="btn-tip">50%</button>
+        <input id="insert-amount" type="text" placeholder="Custom" size="5">
+      </div>
+      <div class="zero-error">
+        <label for="people-number">Number of people</label><br>
+        <p id="error">Can't be zero</p>
+      </div>
+      <input type="text" id="people-number" name="people-number" placeholder="0">
+    </div>
+    <div class="output">
+      <div>
+        <div class="tip-amount">
+          <p class="details">Tip Amount <br><span class="person">/ person</span></p>
+          <p id="price-tip">$0.00</p>
+        </div>
+        <div class="total">
+          <p class="details">Total <br><span class="person">/ person</span></p>
+          <p id="price-total">$0.00</p>
+        </div>
+      </div>
+      <button class="reset-btn">Reset</button>
+    </div>
+    <script src="index.js"></script>
+  </main>
+</body>
+</html>

@@ -1,0 +1,269 @@
+/* Colors */
+:root {
+    --strong-cyan: hsl(172, 67%, 45%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: var(--light-grayish-cyan);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin: 50px 0 40.86px;
+}
+
+main {
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: var(--white);
+    border-radius: 25px 25px 0px 0px;
+}
+
+label,
+.label {
+    line-height: 23.7px;
+    color: var(--dark-grayish-cyan);
+}
+
+label {
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+.label {
+    margin: 32px 0 16px;
+}
+
+#bill-amount,
+#people-number {
+    background-repeat: no-repeat;
+    background-position: 19px center;
+}
+
+#bill-amount {
+    background-image: url(/images/icon-dollar.svg);
+}
+
+#people-number {
+    background-image: url(/images/icon-person.svg);
+}
+
+::placeholder,
+input {
+    text-align: right;
+}
+
+input,
+button {
+    font-family: inherit;
+}
+
+input[type=text]::placeholder {
+    font-size: 24px;
+    line-height: 36px;
+    color: var(--very-dark-cyan);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px 17px;
+    margin-bottom: 32px;
+}
+
+.grid-container button,
+input[type=text] {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 0px;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+input[type=text] {
+    width: 100%;
+    background-color: var(--very-light-grayish-cyan);
+    color: var(--very-dark-cyan);
+    padding-right: 17px;
+}
+
+.grid-container button {
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.grid-container button:hover,
+.grid-container button:focus {
+    background-color: #9FE8DF;
+    color: var( --very-dark-cyan);
+}
+
+input:hover,
+input:focus {
+    outline: 2px solid var(--strong-cyan);
+}
+
+.zero-error {
+    display: flex;
+    justify-content: space-between;
+}
+
+.output {
+    background-color: var(--very-dark-cyan);
+    margin: 32px 0;
+    padding: 37px 24px 24px;
+    border-radius: 15px;
+}
+
+.tip-amount,
+.total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tip-amount {
+    margin-bottom: 20px;
+}
+
+.total {
+    margin-bottom: 32px
+}
+
+.details {
+    line-height: 24px;
+    color: var(--white);
+}
+
+.person {
+    font-size: 13px;
+    line-height: 19.25px;
+    color: var(--grayish-cyan);
+}
+
+#price-tip,
+#price-total {
+    font-size: 32px;
+    line-height: 48px;
+    color: var(--strong-cyan);
+}
+
+.reset-btn {
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--very-dark-cyan);
+    background-color: var(--strong-cyan);
+    width: 100%;   
+    padding: 9px 0; 
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.reset-btn:hover,
+.reset-btn:focus {
+    background-color: #9FE8DF;
+}
+
+/* JavaScript */
+.outline-red {
+    outline: 2px solid #E17457 !important; 
+}
+
+#error {
+    color: #E17457;
+    line-height: 24px;
+    display: none;
+}
+
+.btn-selected {
+    background-color: var(--strong-cyan) !important;
+    color: var(--very-dark-cyan) !important;
+}
+
+/* Desktop version */
+@media (min-width: 950px) {
+    header {
+        margin: 0;
+        margin-bottom: 88px;
+    }
+
+    main {
+        padding: 45px;
+        width: 920px;
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 25px;
+    }
+
+    .input {
+        width: 46%;
+    }
+
+    .output {
+        width: 50%;
+    }
+
+    .output {
+        margin: 0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 16px 14px;
+        margin-bottom: 40px;
+    }
+
+    #price-tip,
+    #price-total {
+    font-size: 48px;
+    line-height: 71px;
+    letter-spacing: -1px;
+    }
+
+    .tip-amount,
+    .total {
+        align-items: center;
+    }
+
+    .tip-amount {
+        margin-bottom: 41px;
+    }
+
+    .total {
+        margin-bottom: 0;
+    }
+
+    .reset-btn {
+        margin-top: auto;
+    }
+
+    .label {
+        margin: 40px 0 16px;
+    }
+}
